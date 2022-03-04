@@ -1,6 +1,6 @@
 module.exports = {
   // 站点配置
-  base: '/',
+  base: '/vuepress-note/',
   lang: 'zh-CN',
   title: 'NOTE',
   description: '前端笔记',
