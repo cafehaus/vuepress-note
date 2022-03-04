@@ -5,6 +5,7 @@ module.exports = {
   description: '前端笔记',
   theme: '@vuepress/theme-default',
   themeConfig: {
+    base: '/vuepress-note/',
     logo: 'https://vuejs.org/images/logo.png',
     repo: 'cafehaus', // 你的仓库
     repoLabel: 'GitHub', // 导航栏上的文本
