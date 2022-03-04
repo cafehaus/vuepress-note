@@ -1,11 +1,11 @@
 module.exports = {
   // 站点配置
+  base: '/',
   lang: 'zh-CN',
   title: 'NOTE',
   description: '前端笔记',
   theme: '@vuepress/theme-default',
   themeConfig: {
-    home: '/vuepress-note/',
     logo: 'https://vuejs.org/images/logo.png',
     repo: 'cafehaus', // 你的仓库
     repoLabel: 'GitHub', // 导航栏上的文本
