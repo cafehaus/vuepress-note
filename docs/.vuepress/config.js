@@ -1,3 +1,5 @@
+
+const { path } = require('@vuepress/utils')
 const sidebar = require('./sidebar.js')
 
 module.exports = {
@@ -16,8 +18,14 @@ module.exports = {
     editLink: false,
     lastUpdatedText: '最近更新',
     contributorsText: '贡献者',
+    notFound: ['骚蕊，此页被狗给吃了...'],
+    backToHome: '返回首页',
     sidebarDepth: 0,
     navbar: [],
     sidebar,
   },
+  plugins: [
+    ['@vuepress/plugin-register-components', { componentsDir: path.resolve(__dirname, './components') }],
+    ['@vuepress/plugin-search', { locales: {'/': { placeholder: '搜索' }} }]
+  ]
 }

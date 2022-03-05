@@ -337,6 +337,28 @@
     "@vuepress/core" "2.0.0-beta.36"
     prismjs "^1.26.0"
 
+"@vuepress/plugin-register-components@^2.0.0-beta.36":
+  version "2.0.0-beta.36"
+  resolved "https://registry.npmjs.org/@vuepress/plugin-register-components/-/plugin-register-components-2.0.0-beta.36.tgz#b6b5bb5134e6d571d2384ae9af69b4285f99ff21"
+  integrity sha512-ciIDC8t4r9n1wbVVwvfcOY/iZ2s8tka3XThs1zrfja2l7TI9BX6+wCT9N/TO+1pOjYhn6938FmTrv4kK69eRFA==
+  dependencies:
+    "@vuepress/core" "2.0.0-beta.36"
+    "@vuepress/utils" "2.0.0-beta.35"
+    chokidar "^3.5.3"
+
+"@vuepress/plugin-search@^2.0.0-beta.36":
+  version "2.0.0-beta.36"
+  resolved "https://registry.npmjs.org/@vuepress/plugin-search/-/plugin-search-2.0.0-beta.36.tgz#4b8219514ae704919cc31d227d571dc06eefa9fd"
+  integrity sha512-UMtWH5h9wXiZgram2w5m/4Ni5R/8w+G/r22pBdBuqB1KMOUO473EmgOWgxqAsT3DLvOgevfmxQvp/OcEQv9Esw==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.35"
+    "@vuepress/core" "2.0.0-beta.36"
+    "@vuepress/shared" "2.0.0-beta.35"
+    "@vuepress/utils" "2.0.0-beta.35"
+    chokidar "^3.5.3"
+    vue "^3.2.28"
+    vue-router "^4.0.12"
+
 "@vuepress/plugin-theme-data@2.0.0-beta.36":
   version "2.0.0-beta.36"
   resolved "https://registry.npmjs.org/@vuepress/plugin-theme-data/-/plugin-theme-data-2.0.0-beta.36.tgz#298fd9b160de886d003705615dbeee8ca2712a2b"
