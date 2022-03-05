@@ -51,3 +51,19 @@
 
 base（部署站点的基础路径） 这个参数你根据名字也能看出来最后是针对部署到服务器上用的，所以本地直接打包yarn build出来的文件用一些第三方的插件如：serve直接运行可能会出错，因为base没生效，要本地查看build效果base可以先设置成默认的 "/"。
 :::
+
+## 四、vuepress v2版本的坑
+最新的v2版本和v1有很大的不同，网上大部分的教程都是针对v1版的，在v2中并不起作用。
+
+**1. 模块化**
+
+有的地方使用import导入文件会报错，如config.js里的配置，这里导出配置用的 module.exports，本身就是node的CommonJS模块规范导出规范，导入要用require来引入（当你在开发一个 VuePress 应用时，由于所有的页面在生成静态 HTML 时都需要通过 Node.js 服务端渲染）
+
+**2. vue组件中使用CommonJS的require导入报错**
+
+vuepress最新的v2版本默认打包方式是Vite（只支持 ES 规范，不支持 CommonJS 规范），在组件中直接用CommonJS的require其他文件会报错：ReferenceError: require is not defined，vue3的官方文档上也有介绍：
+> Vite 是一个 web 开发构建工具，由于其原生 ES 模块导入方式，可以实现闪电般的冷服务器启动
+
+**3. markdown中使用vue组件**
+
+v2版本中像v1所谓的“主题目录结构约定”不再存在，所以 .vuepress/components下的组件并不会被自动全局注册，需要自己手动注册或者借助 @vuepress/plugin-register-components 插件来配置
