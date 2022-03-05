@@ -1,5 +1,4 @@
 ## 笔记分类
-
 ### vue
 * [用vuepress2搭建自己的github网站](./note/vue/用vuepress2搭建自己的github网站/index.md)
 ### uni
