@@ -1,6 +1,5 @@
 module.exports = {
-  // 站点配置
-  base: '/vuepress-note/',
+  // base: '/vuepress-note/', // 部署站点的基础路径
   lang: 'zh-CN',
   title: 'NOTE',
   description: '前端笔记',
