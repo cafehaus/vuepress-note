@@ -23,6 +23,13 @@ const sidebar = [
       { text: '安卓模拟器接口抓包教程', link: '/note/uni/安卓模拟器接口抓包教程/index.md' },
     ]
   },
+  {
+    text: '小程序',
+    collapsible: true,
+    children: [
+      { text: 'video视频高度设置百分比在微信小程序中直接不显示', link: '/note/小程序/video视频高度设置百分比在微信小程序中直接不显示/index.md' },
+    ]
+  },
 ]
 
 module.exports =  sidebar
