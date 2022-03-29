@@ -24,10 +24,17 @@ const sidebar = [
     ]
   },
   {
-    text: 'tool',
+    text: '小程序',
     collapsible: true,
     children: [
-      { text: 'Git使用技巧', link: '/note/tool/Git使用技巧/index.md' },
+      { text: 'video视频高度设置百分比在微信小程序中直接不显示', link: '/note/小程序/video视频高度设置百分比在微信小程序中直接不显示/index.md' },
+    ]
+  },
+  {
+    text: '项目配置',
+    collapsible: true,
+    children: [
+      { text: 'Git使用技巧', link: '/note/项目配置/Git使用技巧/index.md' },
     ]
   },
 ]
