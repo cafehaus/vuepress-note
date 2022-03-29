@@ -23,6 +23,13 @@ const sidebar = [
       { text: '安卓模拟器接口抓包教程', link: '/note/uni/安卓模拟器接口抓包教程/index.md' },
     ]
   },
+  {
+    text: 'tool',
+    collapsible: true,
+    children: [
+      { text: 'Git使用技巧', link: '/note/tool/Git使用技巧/index.md' },
+    ]
+  },
 ]
 
 module.exports =  sidebar
