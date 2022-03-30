@@ -19,6 +19,7 @@ const sidebar = [
     text: 'uni',
     collapsible: true,
     children: [
+      { text: '各端开发打包发布完整指南', link: '/note/uni/各端开发打包发布完整指南/index.md' },
       { text: '开发字节抖音小程序踩坑记', link: '/note/uni/开发字节抖音小程序踩坑记/index.md' },
       { text: '安卓模拟器接口抓包教程', link: '/note/uni/安卓模拟器接口抓包教程/index.md' },
     ]
