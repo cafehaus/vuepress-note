@@ -1,5 +1,5 @@
 const sidebar = [
-  { text: '首页', link: '/' },
+  { text: '首页', link: '/note/guide' },
   {
     text: 'js',
     collapsible: true,
