@@ -35,6 +35,8 @@ git checkout master
 git branch | grep -v 'master' | xargs git branch -D
 ```
 
+注：以上命令只能用 Git Bash 运行才有效，直接在终端命令、PowerShell、vscode终端里运行都会报错：无法识别 grep（windows cmd 终端切换到D盘：① cd /d d:② d:）
+
 **具体执行步骤是：**
 
 1、切换到master分支，因为当前的分支不能删除，要保留哪个就先切换到哪个分支  
