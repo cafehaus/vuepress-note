@@ -5,6 +5,8 @@ const sidebar = [
     collapsible: true,
     children: [
       { text: '日期字符串直接比较的坑', link: '/note/js/日期字符串直接比较的坑/index.md' },
+      { text: '前端pdf预览下载和图片下载压缩', link: '/note/js/前端pdf预览下载和图片下载压缩/index.md' },
+      { text: '前端导出下载excel表格', link: '/note/js/前端导出下载excel表格/index.md' },
     ]
   },
   {
@@ -20,8 +22,9 @@ const sidebar = [
     collapsible: true,
     children: [
       { text: '各端开发打包发布完整指南', link: '/note/uni/各端开发打包发布完整指南/index.md' },
-      { text: '开发字节抖音小程序踩坑记', link: '/note/uni/开发字节抖音小程序踩坑记/index.md' },
       { text: '安卓模拟器接口抓包教程', link: '/note/uni/安卓模拟器接口抓包教程/index.md' },
+      { text: '开发字节抖音小程序踩坑记', link: '/note/uni/开发字节抖音小程序踩坑记/index.md' },
+      { text: '开发安卓APP踩坑记', link: '/note/uni/开发安卓APP踩坑记/index.md' },
     ]
   },
   {
@@ -36,6 +39,7 @@ const sidebar = [
     collapsible: true,
     children: [
       { text: 'Git使用技巧', link: '/note/项目配置/Git使用技巧/index.md' },
+      { text: '根据环境设置请求地址和接口代理', link: '/note/项目配置/根据环境设置请求地址和接口代理/index.md' },
     ]
   },
 ]
