@@ -1,11 +1,13 @@
 # 前端pdf预览下载和图片下载、压缩
 
 **PDF文件预览**
+
 ① 直接用 iframe 标签，体验较好，唯一不足滚动条样式没法自定义
 
 ② 用第三方插件，如 pdfjs
 
 **下载PDF文件**
+
 在浏览器中直接用a标签模拟点击下载pdf文件，如果是跨域资源，浏览器会自动新开tab打开预览而不是下载，在网上找到几种解决方案：
 
 ① 在 pdf 资源路径后添加 ?response-content-type=application/octet-stream 参数
@@ -57,6 +59,7 @@ function downloadExportFile(blobData, fileName, fileType = 'xlsx', callback) => 
 ```
 
 **跨域图片下载**
+
 直接用a标签下载，如果图片路径跨域浏览器也会自动打开而不是下载
 
 ① 绘制到 canvas 上再下载
