@@ -1,47 +1,39 @@
-const sidebar = [
-  { text: '首页', link: '/note/guide' },
-  {
-    text: 'js',
-    collapsible: true,
-    children: [
-      { text: '日期字符串直接比较的坑', link: '/note/js/日期字符串直接比较的坑/index.md' },
-      { text: '前端pdf预览下载和图片下载压缩', link: '/note/js/前端pdf预览下载和图片下载压缩/index.md' },
-      { text: '前端导出下载excel表格', link: '/note/js/前端导出下载excel表格/index.md' },
-    ]
-  },
-  {
-    text: 'vue',
-    collapsible: true,
-    children: [
-      { text: '用vuepress2搭建自己的github网站', link: '/note/vue/用vuepress2搭建自己的github网站/index.md' },
-      { text: 'vue中的v-model刨根问底', link: '/note/vue/vue中的v-model刨根问底/index.md' },
-    ]
-  },
-  {
-    text: 'uni',
-    collapsible: true,
-    children: [
-      { text: '各端开发打包发布完整指南', link: '/note/uni/各端开发打包发布完整指南/index.md' },
-      { text: '安卓模拟器接口抓包教程', link: '/note/uni/安卓模拟器接口抓包教程/index.md' },
-      { text: '开发字节抖音小程序踩坑记', link: '/note/uni/开发字节抖音小程序踩坑记/index.md' },
-      { text: '开发安卓APP踩坑记', link: '/note/uni/开发安卓APP踩坑记/index.md' },
-    ]
-  },
-  {
-    text: '小程序',
-    collapsible: true,
-    children: [
-      { text: 'video视频高度设置百分比在微信小程序中直接不显示', link: '/note/小程序/video视频高度设置百分比在微信小程序中直接不显示/index.md' },
-    ]
-  },
-  {
-    text: '项目配置',
-    collapsible: true,
-    children: [
-      { text: 'Git使用技巧', link: '/note/项目配置/Git使用技巧/index.md' },
-      { text: '根据环境设置请求地址和接口代理', link: '/note/项目配置/根据环境设置请求地址和接口代理/index.md' },
-    ]
-  },
-]
+const fs = require('fs')
+const path = require('path')
+
+// 自动读取 note 文件夹目录生成侧边栏菜单
+let sidebar = [{ text: '首页', link: '/note/guide' }]
+const menuList = fs.readdirSync(path.join(__dirname, '../note'))
+menuList.map(m => {
+  if (m !== 'guide.md') {
+    let posts = fs.readdirSync(path.join(__dirname, '../note/' + m))
+    let children = []
+    posts.map(n => {
+      children.push({
+        text: n,
+        link: `/note/${m}/${n}/index.md`
+      })
+    })
+
+    sidebar.push({
+      text: m,
+      collapsible: true,
+      children
+    })
+  }
+})
+
+// const sidebar = [
+//   { text: '首页', link: '/note/guide' },
+//   {
+//     text: 'js',
+//     collapsible: true,
+//     children: [
+//       { text: '日期字符串直接比较的坑', link: '/note/js/日期字符串直接比较的坑/index.md' },
+//       { text: '前端pdf预览下载和图片下载压缩', link: '/note/js/前端pdf预览下载和图片下载压缩/index.md' },
+//       { text: '前端导出下载excel表格', link: '/note/js/前端导出下载excel表格/index.md' },
+//     ]
+//   }
+// ]
 
 module.exports =  sidebar
