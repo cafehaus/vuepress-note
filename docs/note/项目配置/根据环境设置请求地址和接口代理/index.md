@@ -120,4 +120,4 @@ module.exports = {
 
 平时开发前端项目，不管是要在手机上查看实际效果，还是要分享给他人查看，我们也是可以直接通过 Network 那个 ip 地址分享给同事的（一般我们在vscode里打包运行起来后,复制到浏览器里打开的那个是 localhost）。
 
-windows 上查看本机ip命令：ipconfig，mac和linux上终端命令是：ifconfig
+windows 上查看本机ip命令：ipconfig，mac和linux上终端命令是：ifconfig（总共有3个："以太网适配器 以太网:"、"以太网适配器 vEthernet (Default Switch):" 和 "无线局域网适配器 WLAN，在手机上看用无线局域网那个 IPv4 地址）
