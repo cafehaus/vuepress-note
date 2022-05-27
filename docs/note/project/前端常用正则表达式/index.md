@@ -88,6 +88,16 @@ export default urlValidator
 
 > URL() 构造函数返回一个新创建的 URL 对象，表示由一组参数定义的 URL，如果给定的基本 URL 或生成的 URL 不是有效的 URL 链接，则会抛出一个TypeError，[MDN URL介绍链接](https://developer.mozilla.org/zh-CN/docs/Web/API/URL/URL)
 
+## 数字正则
+
+```js
+// 数字
+/^[+-]?(0|([1-9]\d*))(\.\d+)?$/
+
+// 大于 0 的整数
+/^[1-9]\d*$/
+```
+
 ## 正则需要转义的字符
 
 ^*+-$?[](){}/\|
