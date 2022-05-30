@@ -42,11 +42,11 @@ docker run -d -p 8088:80 --name wordpress --link wpmysql:mysql wordpress
 **解决方案**
 
 ```bash
-# 1.查看容器运行状态
+# 1.查看运行的容器
 docker ps
 
 # 2.进入mysql容器
-docker exec -it mysql bash
+docker exec -it wpmysql bash
 
 # 3.登录mysql
 mysql -uroot -p
