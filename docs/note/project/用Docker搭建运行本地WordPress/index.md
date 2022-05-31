@@ -24,7 +24,7 @@ docker run -d -p 3123:3306 --name wpmysql -e MYSQL_ROOT_PASSWORD=123456 mysql
 # -d: 启动的容器在后台运行
 # --name: 容器名 wpmysql
 # -e MYSQL_ROOT_PASSWORD:  设置 MySQL 的 root 密码
-# -p：映射端口，将容器的3306端口映射到主机的3123端口（为了防止冲突不要直接用3306）
+# -p：映射端口，将容器的3306端口映射到主机的3123端口
 # mysql：启动的镜像，如果具体版本，这里也要加上具体版本号 mysql:5.2
 ```
 
@@ -61,10 +61,24 @@ alter user 'root'@'%' identified with mysql_native_password by '123456';
 flush privileges;
 ```
 
+<img src="./2.png">
+
 经过上面的设置后应该就可以正常连接了，注意数据库地址要填本机的 ip 地址加上端口号，在 C:\Windows\System32\drivers\etc 里的 hosts 文件里也能看到 Docker 添加的 ip 映射：# Added by Docker Desktop）
 
-<img src="./2.png">
+<img src="./3.png">
 
 之后看到这就代表部署成功了，撒花~~~
 
-<img src="./3.png">
+<img src="./4.png">
+
+**其他问题**
+
+因为我们本地的 ip 一般是动态 ip，过一段时间会变的，如果发现突然某一天又连不上了：
+
+<img src="./5.png">
+
+这种情况可能是 ip 又变了，在终端里用 ipconfig 查看新的 ip 地址，然后 C:\Windows\System32\drivers\etc 文件夹下的 hosts 里的 Docker ip 映射也同步修改一下，在输入 ipconfig/flushdns 刷新本机 DNS 解析缓存，之后再用新的 ip 地址去连接数据库就可以了，可以直接用 navcat 去测试连接。
+
+数据库可以连了之后，再把之前的 wordpress 容器删掉，再重新启动连接数据库就可以了。
+
+<img src="./6.png">
