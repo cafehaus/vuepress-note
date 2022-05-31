@@ -82,3 +82,39 @@ flush privileges;
 数据库可以连了之后，再把之前的 wordpress 容器删掉，再重新启动连接数据库就可以了。
 
 <img src="./6.png">
+
+**引发的连带问题**
+
+愉快地玩耍了本地 wordpress 之后，打开 vue 项目时，发现启动本地项目时 Network 变成 unavailable 了:
+
+<img src="./7.png">
+
+::: tip Docker 的网络模式
+最上面的第一个网络 vEthenet (Default Switch)，就是 docker 和宿主机网络通信添加出来的，docker容器的网络模式默认 --net=bridge，为容器创建独立的网络命名空间，容器具有独立的网卡等所有单独的网络栈，是最常用的使用方式。也可以设置为 --net=host，直接使用容器宿主机的网络命名空间，此时容器的IP地址即为宿主机的IP地址。
+::: 
+
+网上找到的解决方案：
+
+1. 禁用本地多余的网络（试了没效果）
+2. 在 vue.config.js 里 devServer 里 的 public 设置成本机的 ip 地址，或者用 node 提供的 os 模块去自动获取
+
+```js
+module.exports = {
+    devServer:{
+        public: require('os').networkInterfaces()[Object.keys(require('os').networkInterfaces())[0]][1].address + '::8080'
+  }
+}
+```
+> **devServer.public：**当使用内联模式(inline mode)并代理 dev-server 时，内联的客户端脚本并不总是知道要连接到什么地方。它会尝试根据 window.location 来猜测服务器的 URL，但是如果失败，你需要使用这个配置。此处涉及的相关配置：devServer.host、devServer.public、devServer.inline（后两个 webpack 5里已经移除了，webpack 4里才有）
+
+<img src="./8.png">
+
+每个项目都要自己这样去设置的话太不程序猿了，应该会有用，不过我没试就直接 pass 掉了
+
+3. 添加 windows 10 的 PATH 系统变量：C:\windows\System32\Wbem，注意添加之后把这个变量用那个“上移”按钮移到第一个去：
+
+<img src="./9.png">
+
+然后重启 vscode 发现完美解决了，而且多出了好几个 Network，打开都是一样的效果：
+
+<img src="./10.png">
