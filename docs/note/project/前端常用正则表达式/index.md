@@ -100,6 +100,8 @@ export default urlValidator
 
 ## 正则需要转义的字符
 
+```
 ^*+-$?[](){}/\|
+```
 
 [JavaScript正则表达式需要转义的字符](https://blog.csdn.net/weixin_44100002/article/details/114373990?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6-114373990-blog-108361305.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-6-114373990-blog-108361305.pc_relevant_default&utm_relevant_index=10)
