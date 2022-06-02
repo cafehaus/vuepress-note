@@ -31,4 +31,42 @@ cid = plus.push.getClientInfo().clientid
 // #endif
 ```
 
+<img src="./2.jpg">
+
+上面的代码还有一个坑，因为使用了 plus.push，要在 manifest 里勾选上 push 模块，否则 app 上打开时会一直提示：打包时未添加 Push 模块，同时还需要在 uni 的开发后台申请开 [UniPush](https://uniapp.dcloud.net.cn/tutorial/app-push-unipush.html)。
+
 [uni-app使用plus注意事项](https://uniapp.dcloud.io/tutorial/use-html5plus.html)
+
+## 无法安装此 App，因为无法验证其完整性
+
+<img src="./3.jpg">
+
+网上有说打开手机：设置-通用-设备管理-安装证书...反正 ios 15+ 里没找到安装的地方。
+
+这种情况是当前设备没有开发和调试权限导致的，要去苹果开发者后台 Devices 里把你手机的 UDID 添加到里面。
+
+<img src="./4.png">
+
+设备添加之后，还需要去更新描述文件 Profiles，刚开始我以为直接重新下载描述文件打包就可以了，实际上是不行的。还需要去更新描述文件里里面的设备，开发环境我这里是去改那个“iOS应用开发通用”，点进去：
+
+<img src="./5.png">
+
+发现描述文件详情里面的设备 Devices 那果然只有之前添加的一个，新加的设备没包含在里面，然后点击右上角的 Edit:
+
+<img src="./6.png">
+
+把最底下的那个新加的设备勾选上
+
+<img src="./7.png">
+
+之后在重新下载这个描述文件，可以传到蒲公英的证书管理里看下有没有生效，我这里显示2台设备，说明已经可以了：
+
+<img src="./8.png">
+
+在重新用 HBuilderX 云打包，在更新到蒲公英上，然后手机扫码重新安装，这下就可以正常打开了。
+
+<img src="./9.jpg" width="400">
+
+下面截图的第一个就是从苹果开发者后台下载下来的描述文件，后两个是开发和发布的证书文件（需要在mac里用密码钥匙串导出成 p12 文件才可以用来打包），添加设备后证书文件不用去更新，只用更新第一个 iOS.mobileprovision 描述文件：
+
+<img src="./10.png" width="400">
