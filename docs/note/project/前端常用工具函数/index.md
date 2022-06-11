@@ -27,3 +27,26 @@ function fmtLink(content) {
 }
 ```
 
+**浏览器中复制文本内容**
+
+```js
+function copyText(text) { // from zhangxinxu
+  if (!text) return
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text)
+  } else {
+    let textarea = document.createElement('textarea')
+    document.body.appendChild(textarea)
+    textarea.style.position = 'fixed'
+    textarea.style.clip = 'rect(0 0 0 0)'
+    textarea.style.top = '10px'
+    textarea.value = text
+    textarea.select()
+    document.execCommand('copy', true)
+    document.body.removeChild(textarea)
+  }
+}
+```
+
+也可以用知名的复制粘贴库 clipboard.js，但是需要自己提前初始化，只用简单的复制用上面那个就好了
+
