@@ -50,3 +50,27 @@ function copyText(text) { // from zhangxinxu
 
 也可以用知名的复制粘贴库 clipboard.js，但是需要自己提前初始化，只用简单的复制用上面那个就好了
 
+**根据环境获取对应的网址**
+
+```js
+getWebsite(subdomain, domain = 'cafe123.cn') {
+  let url = 'https://www.cafe123.cn'
+  let sub = location.hostname.split('.')[0].split('-')[0]
+  switch (sub) {
+    case '192': // 开发
+    case 'localhost':
+    case 'dev':
+      url = `http://dev-${subdomain}.${domain}`
+      break
+    case 'test': // 测试环境
+      url = `https://test-${subdomain}.${domain}`
+      break
+    case 'pre': // 预发布
+      url = `https://pre-${subdomain}.${domain}`
+      break
+    default: // 线上环境
+      url = `https://${subdomain}.${domain}`
+  }
+  return url
+},
+```
