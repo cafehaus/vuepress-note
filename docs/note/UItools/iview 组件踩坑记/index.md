@@ -43,3 +43,11 @@ handlePageSize(size) {
     // this.getList()
 },
 ```
+
+### Form 表单里的 InputNumber 组件校验一直不通过
+
+明明输入框里已经有值了，校验一直报红，看控制台还报错：[Vue warn]: Invalid prop: type check failed for prop "value". Expected Number with value 1, got String with value "1"
+
+<img src="./1.png" />
+
+这里就是因为初始赋值的时候，直接将数值字符串直接赋值给了 InputNumber，Form 表单里的校验规则 rules 里又有指定 type 为 number，类型不一致导致校验不通过。
