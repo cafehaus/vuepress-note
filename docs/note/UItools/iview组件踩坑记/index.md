@@ -46,7 +46,10 @@ handlePageSize(size) {
 
 ### Form 表单里的 InputNumber 组件校验一直不通过
 
-明明输入框里已经有值了，校验一直报红，看控制台还报错：[Vue warn]: Invalid prop: type check failed for prop "value". Expected Number with value 1, got String with value "1"
+明明输入框里已经有值了，校验一直报红，看控制台还报错：
+```js
+[Vue warn]: Invalid prop: type check failed for prop "value". Expected Number with value 1, got String with value "1"
+```
 
 <img src="./1.png" />
 
