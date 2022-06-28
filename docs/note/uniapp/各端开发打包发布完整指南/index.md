@@ -45,10 +45,15 @@ HBuilderX，简称HX，是轻如编辑器，强如IDE的合体版本，有点像
 * 内置浏览器
 * uni-app（Vue2）编译
 * uni-app（Vue3）编译
+* App调试
 * App真机运行
 * App云打包
 * scss/sass编译
 * stylus编译
+
+通过HBuilderX顶部菜单：工具 - 插件安装
+
+<img src="./3.png">
 
 **创建项目**
 创建新项目可以通过HBuilderX顶部菜单：文件 - 新建 - 项目，导入已有项目：文件 - 导入 - 从...
@@ -56,16 +61,16 @@ HBuilderX，简称HX，是轻如编辑器，强如IDE的合体版本，有点像
 **运行项目**
 运行项目通过HBuilderX顶部菜单：运行 - 运行到...，开发阶段可先选择：运行到内置浏览器，如果有报错缺少xx插件，直接根据提示去安装对应插件，再重新运行就可以了。
 
-<img src="./3.png">
+<img src="./4.png">
 
 ## 四、小程序和H5打包
 各平台的配置可以直接在manifest.json里配置，或者在HBuilderX开发工具里选中manifest.json文件，右侧会出现图形化界面直接选择配置
 
-<img src="./4.png">
+<img src="./5.png">
 
 先运行起来，然后点击：发行 - 小程序/网站 - 设置小程序/网站名字/appid/域名，打包成功后可以在dist - build 文件夹下找到对应平台的打包文件（dist - dev 目录下对应的是各平台运行文件）
 
-<img src="./5.png">
+<img src="./6.png">
 
 ## 五、安卓应用打包
 **1、点击：发行 - 原生App-云打包**
@@ -76,7 +81,7 @@ Android包名、证书别名、证书私钥密码、选择证书文件（直接�
 
 **3、点击打包按钮**
 
-<img src="./6.png">
+<img src="./7.png">
 
 ## 六、IOS应用打包
 **1、点击：发行 - 原生App-云打包**
@@ -87,11 +92,11 @@ Bundle ID(AppID)、证书私钥密码、证书profile文件和私钥证书（直
 
 **3、点击打包按钮**
 
-<img src="./7.png">
+<img src="./8.png">
 
 使用云打包点击了打包按钮后，需要等待一段时间，少则几分钟，多则大半天...最终打包成功后会在控制台打印出app安装文件的下载地址：
 
-<img src="./8.png">
+<img src="./9.png">
 
 Android：apk文件，直接点击“打开所在目录”，生成的apk文件在 unpackage/release/apk文件夹下
 
@@ -124,7 +129,7 @@ IOS:  ipa文件，直接点击“下载地址”，远程下载到本地
 
 ios正式应用只能从app store里下载，需要先注册苹果开发者账号，填写各项应用资料，上传ipa文件审核通过后才能下载使用
 
-<img src="./9.png">
+<img src="./10.png">
 
 ② 测试版本
 
@@ -165,7 +170,7 @@ keytool -genkey -alias testalias -keyalg RSA -keysize 2048 -validity 36500 -keys
 * android.keystore：是证书文件名称，可修改为自己想设置的文件名称，也可以指定完整文件路径
 * 36500：是证书的有效期，表示100年有效期，单位天，建议时间设置长一点，避免证书过期
 
-<img src="./10.png">
+<img src="./11.png">
 
 按提示输入信息后就会在D盘根目录下生成 android.keystore 文件，这个文件就可以用来直接打包安卓app了
 
