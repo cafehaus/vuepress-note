@@ -63,7 +63,7 @@ HBuilderX，简称HX，是轻如编辑器，强如IDE的合体版本，有点像
 
 <img src="./4.png">
 
-## 四、小程序和H5打包
+## 五、小程序和H5打包
 各平台的配置可以直接在manifest.json里配置，或者在HBuilderX开发工具里选中manifest.json文件，右侧会出现图形化界面直接选择配置
 
 <img src="./5.png">
@@ -72,7 +72,7 @@ HBuilderX，简称HX，是轻如编辑器，强如IDE的合体版本，有点像
 
 <img src="./6.png">
 
-## 五、安卓应用打包
+## 六、安卓应用打包
 **1、点击：发行 - 原生App-云打包**
 
 **2、按照unpackage/cert目录下的README.md说明填写：**
@@ -83,7 +83,7 @@ Android包名、证书别名、证书私钥密码、选择证书文件（直接�
 
 <img src="./7.png">
 
-## 六、IOS应用打包
+## 七、IOS应用打包
 **1、点击：发行 - 原生App-云打包**
 
 **2、按照unpackage/cert目录下的 README.md 说明填写：**
@@ -112,7 +112,7 @@ IOS:  ipa文件，直接点击“下载地址”，远程下载到本地
 
 [iOS证书(.p12)和描述文件(.mobileprovision)申请](https://ask.dcloud.net.cn/article/152)
 
-## 七、发布上线
+## 八、发布上线
 **1、小程序**  
 直接用小程序开发者工具导入 dist - build 文件夹下对应的目录，如微信小程序：dist/build/mp-weixin
 
