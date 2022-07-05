@@ -52,3 +52,19 @@ export default Comp
 每次 win + R ，然后 cmd 打开的小黑窗都是在c盘目录，要运行其他目录的文件要 cd 一堆路径，十分不方便。直接在 windows 电脑顶部的文件夹路径输入框中输入 cmd 一回车，会自动定位到当前目录。
 
 PowerShell也有同样的技巧，在当前目录下按住Shift键，然后点击鼠标右键，就会在菜单中看到：在此处打开 PowerShell 窗口(S)
+
+## 终端命令小黑窗没法操作
+
+有时输入了 git 命令如 git branch，vscode 里的终端命令就显示 : 或者 (END)，没法操作也没法退出，ctrl + Z 或 ctrl + C 都没用，以前都直接关掉终端然后再重新打开来解决，其实只用按一下键盘上的 Q 键，就会自动退出，和咱平时 ctrl + C 一样的效果了。
+
+造成这个问题的元凶是 git 的分页器 [pager](https://git-scm.com/docs/git-config#Documentation/git-config.txt-corepager)，git 在 windows 下默认的分页器是 less，要解决上面的问题，有两种方式：
+
+```bash
+# 方式一：会屏蔽掉 git 所有命令的分页器：git branch / git show / git log...
+git config --global core.pager ''
+
+# 方式二：只关闭 git branch 的分页器
+git config --global pager.branch false
+```
+
+综上所述，还是推荐直接按 Q 键吧。
