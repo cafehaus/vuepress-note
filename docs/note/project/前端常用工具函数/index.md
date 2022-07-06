@@ -74,3 +74,21 @@ getWebsite(subdomain, domain = 'cafe123.cn') {
   return url
 },
 ```
+
+**去掉时间字符串里的秒**
+
+```js
+fmtDate(v) {
+  if (v) {
+    let dateReg = /^[1-9]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])\s+([0-1][0-9]|20|21|22|23):[0-5][0-9]:[0-5][0-9]$/
+    if (dateReg.test(v)) {
+      return v.replace(/:\d{2}$/, '')
+    } else {
+      return v
+    }
+  } else {
+    return ''
+  }
+},
+```
+
