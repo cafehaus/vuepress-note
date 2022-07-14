@@ -11,7 +11,7 @@ cd /data/cafe-user/log
 tail -f cafe-user.log
 
 # 也可以用下面这个
-# tailf cafe-user.log
+tailf cafe-user.log
 
 # 分页查看，可以通过键盘上上下箭头翻页
 less cafe-user.log
@@ -22,6 +22,10 @@ less cafe-user.log | grep '1345102704' | grp 'zhou' --color
 # 直接通过绝对路径，联合查询，grep -v 反向过滤
 grep '1345102704' /data/cafe-user/log/cafe-user.log | grep -v 'zhou' | tail -n 10
 ```
+补充：
+1、less 一页一页翻动
+2、head 取出文件前面几行，head [-n number] 文件，默认10行：head -n 20 cafe-user.log
+3、tail 取出文件前面几行，tail [-n number] 文件，默认10行：tail -n 20 -f cafe-user.log，-f 表示持续侦测后面所接的档名，所以一般用来查看日志
 
 下载日志
 ```bash
