@@ -84,3 +84,30 @@
 18. local history：代码本地修改记录，比 ctrl + z 好用
 19. vscode-icons：官方出品的图标库
 20. Regex Previewer：预览正则表达式效果
+
+
+## 前端工具链
+
+1. 开发环境：浏览器、V8、Node、Deno
+2. 前端框架：Angular、React、Vue
+3. 前端微服务框架：Single SPA、Qiankun
+4. 脚手架：Vue CLI、Angular CLI、Create React App、Yeoman、Umi、Maven
+5. 跨端框架：Electron、uniapp、taro、flutter、React Native、Weex
+6. 后端框架：Nest、Express、Koa、Nuxt、Egg
+7. 开发工具：Vscode、HBuilderX、IntelliJ IDEA
+8. 静态化支持：TypeScript、CoffeeScript、Flow、LiveScript
+9. 样式预处理器：scss、less、stylus
+10. 模板引擎：handlebarsjs、etpl、templatejs、Jsx
+11. 调试工具：Chrome DevTools/Firebug/Webkit inspecto、vscode/WebStorm/IDE、Http-server
+12. 转译工具：Babel、postcss
+13. 格式规范工具：JSLint、JSHint、ESLint、TSLint、Husky、Prettier、stylelint
+14. 接口联调工具：Axios、Fetch、Postman、Easymock、Swagger
+15. 包管理器：NPM、Yarn、Bower、PNPM、lerna
+16. 模块加载器：RequireJS、SystemJS、StealJS、ES Module、CommonJs
+17. 打包工具：Webpack、Rollup、Parcel、Browserify、Grunt、Gulp、vite
+18. 进程管理：Forever、PM2、StrongLoop Process Manager
+19. 代码管理：git、gitlab、sourcetree、github Desktop、Sonar
+20. 代码集成和部署：jenkins、docker、nginx、Travis
+21. 测试工具：Mocha、Jasmine、Jest、Karma
+22. 抓包工具：Wireshark、Chalers、Fidder
+23. 监控：sentry
