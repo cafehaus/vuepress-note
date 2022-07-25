@@ -83,8 +83,12 @@ WP_Query 和 WP_Comment_Query 这两个查询类里，其实都有这个参数no
 
 如果 no_found_rows 为 false， 最大页 max_num_pages、总条数found_posts/found_comments 就不会去被计算，我们直接获取就都是0。
 
-但是主要注意 WP_Query 文档上并没有写 no_found_rows 这个参数，翻源码可以发现是有的，WP_Comment_Query 文档上有写 no_found_rows 参数，但是要注意它的默认值是 true。
+但是要注意 WP_Query 文档上并没有写 no_found_rows 这个参数，翻源码可以发现是有的，WP_Comment_Query 文档上有写 no_found_rows 参数，但是要注意它的默认值是 true。
+
+WP_User_Query 里也有个同样的参数，不过名字叫 count_total，默认为 true。
 
 [WP_Query 文档](https://developer.wordpress.org/reference/classes/wp_query/__construct/)
 
 [WP_Comment_Query 文档](https://developer.wordpress.org/reference/classes/WP_Comment_Query/__construct/)
+
+[WP_User_Query 文档](https://developer.wordpress.org/reference/classes/wp_user_query/)
